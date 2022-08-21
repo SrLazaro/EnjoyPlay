@@ -12,7 +12,9 @@ class Init extends Phaser.Scene{
 
         this.load.image('options_button', '/img/options_button.png')
 
-        this.load.audio('title_music', './music/title.mp3')
+        //this.load.audio('title_music', './music/title.mp3')
+
+        this.load.audio('click_song', './music/click_song.mp3')
         
     }
 
@@ -23,12 +25,14 @@ class Init extends Phaser.Scene{
         this.play_button = this.add.image(400,440, 'play_button')
         this.play_button.setInteractive()
         this.play_button.on(Phaser.Input.Events.GAMEOBJECT_POINTER_DOWN, () => {
+            this.play_song('click_song')
             console.log('pressioned')
+            
         })
 
         this.options_button = this.add.image(400,480,'options_button')
 
-        this.play_song('title_music')
+       // this.play_song('title_music')
         
     }
 
