@@ -6,7 +6,8 @@ window.onload = function(){
         type: Phaser.Canvas,
         width: 800,
         height: 600,
-        scene: [Init]
+        scene: [Init,
+                Scene01]
     }
 
     game = new Phaser.Game(config)
