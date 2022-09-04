@@ -22,13 +22,13 @@ class Init extends Phaser.Scene{
 
         this.initial_screen = this.add.image(0,0,'initial_screen').setOrigin(0,0)
 
-        this.play_song('title_music', true)
+        this.play_song('title_music', 0.1, true)
 
         this.play_button = this.add.image(400,440, 'play_button')
         this.play_button.setInteractive()
 
         this.play_button.on(Phaser.Input.Events.GAMEOBJECT_POINTER_DOWN, () => {
-            this.play_song('click_song', false)
+            this.play_song('click_song', 0.3, false)
             this.scene.start('Scene01')
             
         })
@@ -45,12 +45,12 @@ class Init extends Phaser.Scene{
 
     }
 
-    play_song(name_music, execute_loop){
+    play_song(name_music, volume, execute_loop){
 
         this.sound.pauseOnBlur = false
 
         this.music =  this.sound.add(name_music, {
-            volume: 0.2,
+            volume: volume,
             loop: execute_loop
         })
 
