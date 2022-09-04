@@ -29,7 +29,6 @@ class Init extends Phaser.Scene{
 
         this.play_button.on(Phaser.Input.Events.GAMEOBJECT_POINTER_DOWN, () => {
             this.play_song('click_song', false)
-            this.music.pause()
             this.scene.start('Scene01')
             
         })
